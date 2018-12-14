@@ -81,10 +81,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlayerBoardTests.cs" />
+    <Compile Include="LaunchMissileTests.cs" />
     <Compile Include="BattleShipTests.cs" />
     <Compile Include="BoardTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestData\BoardTestData.cs" />
+    <Compile Include="TestData\TestData.cs" />
     <Compile Include="ValidatePlacementOfShipsTests.cs" />
   </ItemGroup>
   <ItemGroup>
