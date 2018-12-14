@@ -17,23 +17,13 @@ namespace Battleship.Tests
 {
     public class LaunchMissileTests
     {
-        private readonly IFixture _fixture;
-        private readonly IValidatePlacementOfShip _validatePlacementOfShip;
-
-        public LaunchMissileTests()
-        {
-            _fixture = new Fixture().Customize(new AutoNSubstituteCustomization());
-            _validatePlacementOfShip = _fixture.Freeze<ValidatePlacementOfShip>();
-        }
-
         [Fact]
         public void Attack_SquareOccupied_SquareSetToHit()
         {
             var board = TestData.TestData.GetBoard(10, 10);
             var coordinate = TestData.TestData.GetCoordinate();
             string battleshipName = "test";
-            _validatePlacementOfShip.Validate(Arg.Any<Coordinate>(), Arg.Any<IBoard>(), Arg.Any<List<Square>>()).ReturnsForAnyArgs(true);
-            var battleship = new BattleShip(_validatePlacementOfShip);
+            var battleship = new BattleShip(new ValidatePlacementOfShip());
             var ship = battleship.AddBattleship(coordinate, board, battleshipName);
             var launchMissile = new LaunchMissile();
             var result = launchMissile.Attack(2, 1, board);
@@ -46,8 +36,7 @@ namespace Battleship.Tests
             var board = TestData.TestData.GetBoard(10, 10);
             var coordinate = TestData.TestData.GetCoordinate();
             string battleshipName = "test";
-            _validatePlacementOfShip.Validate(Arg.Any<Coordinate>(), Arg.Any<IBoard>(), Arg.Any<List<Square>>()).ReturnsForAnyArgs(true);
-            var battleship = new BattleShip(_validatePlacementOfShip);
+            var battleship = new BattleShip(new ValidatePlacementOfShip());
             var ship = battleship.AddBattleship(coordinate, board, battleshipName);
             var launchMissile = new LaunchMissile();
             var result = launchMissile.Attack(2, 3, board);
@@ -60,8 +49,7 @@ namespace Battleship.Tests
             var board = TestData.TestData.GetBoard(10, 10);
             var coordinate = TestData.TestData.GetCoordinate();
             string battleshipName = "test";
-            _validatePlacementOfShip.Validate(Arg.Any<Coordinate>(), Arg.Any<IBoard>(), Arg.Any<List<Square>>()).ReturnsForAnyArgs(true);
-            var battleship = new BattleShip(_validatePlacementOfShip);
+            var battleship = new BattleShip(new ValidatePlacementOfShip());
             var ship = battleship.AddBattleship(coordinate, board, battleshipName);
             var launchMissile = new LaunchMissile();
             launchMissile.Attack(2, 1, board);

@@ -30,7 +30,7 @@ namespace Battleship.Tests
             var hitResult = playerBoard.Attack(2, 1);
             hitResult.Should().Be(SquareStatus.hit.ToString());
             var miss = playerBoard.Attack(2, 3);
-            hitResult.Should().Be(SquareStatus.miss.ToString());
+	        miss.Should().Be(SquareStatus.miss.ToString());
             playerBoard.GameStatus().Should().BeFalse();
             playerBoard.Attack(2, 2);
             playerBoard.GameStatus().Should().BeTrue();
