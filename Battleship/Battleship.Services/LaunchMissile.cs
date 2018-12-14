@@ -9,6 +9,7 @@ namespace Battleship.Services
 {
     public class LaunchMissile : ILaunchMissile
     {
+		//TODO validate row, column
         public string Attack(int row, int column, IBoard board)
         {
             var square = board.FindSquare(row, column);

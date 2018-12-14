@@ -31,14 +31,16 @@ namespace Battleship
                     break;
                 Console.WriteLine("Enter Battleship Name");
                 string battleshipName = Console.ReadLine();
-                Console.WriteLine("Battle ship start position");
-                int.TryParse(Console.ReadLine(), out var start);
-                Console.WriteLine("Battleship end position");
-                int.TryParse(Console.ReadLine(), out var end);
+                Console.WriteLine("Battle ship start Row");
+                int.TryParse(Console.ReadLine(), out var startRow);
+                Console.WriteLine("Battleship Start Column");
+                int.TryParse(Console.ReadLine(), out var startColumn);
+	            Console.WriteLine("Battleship Length");
+	            int.TryParse(Console.ReadLine(), out var length);
                 Console.WriteLine("Battleship alignment 1 for horizantal, or any number for vertical");
                 int.TryParse(Console.ReadLine(), out var alignment);
                 var align =(alignment == 1) ? Services.Enums.Alignment.Horizantal : Services.Enums.Alignment.Vertical;
-                Coordinate coordinate = new Coordinate(start, end, align);
+                Coordinate coordinate = new Coordinate(startRow, startColumn, length, align);
                 try
                 {
                     playerBoard.AddBattleShip(coordinate, battleshipName);

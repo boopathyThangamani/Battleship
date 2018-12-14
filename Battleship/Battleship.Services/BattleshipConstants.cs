@@ -11,5 +11,6 @@ namespace Battleship.Services
         public static readonly string CoordinatesOutOfIndex = "Coordinates are out of index";
         public static readonly string CoordinatesAreInvalid = "Coordinates are invalid";
         public static readonly string ShipOverLaping = "Ships cant overlap. Try another coordinates";
+	    public static readonly string InvalidShipLength = "Ship length is invalid";
     }
 }
