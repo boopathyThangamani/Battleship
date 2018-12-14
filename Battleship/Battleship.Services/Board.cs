@@ -9,7 +9,6 @@ namespace Battleship.Services
 	public class Board : IBoard
 	{
 		private const int defaultSize = 10;
-
 		private int noOfRows, noOfColumns;
 		public List<Square> Squares { get; set; }
 
@@ -31,6 +30,7 @@ namespace Battleship.Services
 				for (var column = 1; column <= NoOfColumns; column++)
 					squares.Add(new Square(row, column));
 			Squares = squares;
+
 		}
 
 		public Board()
@@ -45,8 +45,8 @@ namespace Battleship.Services
 			Initilize();
 		}
 
-		public List<Square> FindSquares(Coordinate coordinate)
-			=> Squares.Where(square => square.Row >= coordinate.StartRow && square.Column >= coordinate.StartColumn && square.Column <= coordinate.EndColumn && square.Row <= coordinate.EndRow).ToList();
+        public List<Square> FindSquares(Coordinate coordinate)
+        => Squares.Where(square => square.Row >= coordinate.StartRow && square.Column >= coordinate.StartColumn && square.Column <= coordinate.EndColumn && square.Row <= coordinate.EndRow).ToList();
 
 		public Square FindSquare(int row, int column)
 			=> Squares.FirstOrDefault(square => square.Row == row && square.Column == column);

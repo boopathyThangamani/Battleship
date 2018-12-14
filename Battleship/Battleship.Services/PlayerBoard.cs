@@ -15,6 +15,7 @@ namespace Battleship.Services
         }
         public void AddBattleShip(Coordinate coordinate, string battleshipName)
         {
+            //Should inject
             IValidatePlacementOfShip validatePlacementOfShip = new ValidatePlacementOfShip();
             IBattleship battleship = new BattleShip(validatePlacementOfShip);
             var ship = battleship.AddBattleship(coordinate, Board, battleshipName);

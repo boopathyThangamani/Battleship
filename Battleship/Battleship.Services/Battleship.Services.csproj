@@ -56,7 +56,6 @@
     <Compile Include="Models\Square.cs" />
     <Compile Include="PlayerBoard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SquareState\SquareState.cs" />
     <Compile Include="ValidatePlacementOfShip.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

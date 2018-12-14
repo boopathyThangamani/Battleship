@@ -41,19 +41,10 @@ namespace Battleship.Services.Models
 		}
 
 
-		public Coordinate(int start, int end, int length, Alignment alignment)
+		public Coordinate(int startRow, int startColumn, int length, Alignment alignment)
 		{
-			// in case start is 3 and end is 1 (place ship from 1 to 3) by swapping the values;
-			if (start > end)
-			{
-				StartRow = end;
-				StartColumn = start;
-			}
-			else
-			{
-				StartRow = start;
-				StartColumn = end;
-			}
+            StartRow = startRow;
+            StartColumn = startColumn;
 
 			Length = length;
 			Alignment = alignment;
